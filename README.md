@@ -6,7 +6,7 @@ Understanding PWAs is an important part of web development, and a big part of th
 
 ## https://bmaggiano-jate.herokuapp.com/
 
-## Usage/Screenshots/Demo
+## Demo/Screenshots
 
 Demo functionality (and install)
 
@@ -23,6 +23,10 @@ Service Worker present
 indexedDB
 
 ![image](https://user-images.githubusercontent.com/103971233/202042252-c60e215a-cde6-4fc9-957a-f247d738565c.png)
+
+## Usage
+
+In order to use this app, open the link to the deployed application on heroku. Then from there, click on the "Install!" button, from there you will be prompted to install and open in the JATE app. This will allow you to have access to the text editor at anytime.
 
 ## License
 
