@@ -4,10 +4,11 @@
   "description": "Just another text editor using PWA tools.",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
-    "server": "npm run build && cd server && node server.js",
-    "build": "cd server node server.js --ignore client",
-    "install": "cd client && npm run build",
+    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server node server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
   },
   "keywords": [],

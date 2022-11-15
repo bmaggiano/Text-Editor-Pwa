@@ -32,8 +32,10 @@ module.exports = () => {
         short_name: 'JATE',
         description: 'My awesome Progressive Web App!',
         fingerprints: false,
-        background_color: '#225ca3',
+        background_color: '#225CA3',
+        theme_color: '#225CA3',
         crossorigin: 'use-credentials',
+        inject: true,
         icons: [
           {
             src: path.resolve("./src/images/logo.png"),
@@ -41,8 +43,8 @@ module.exports = () => {
             destination: path.join("assets", "icons"),
           },
         ],
-        start_url: './',
-        publicPath: './'
+        start_url: '/',
+        publicPath: '/'
       }),
     ],
     module: {
