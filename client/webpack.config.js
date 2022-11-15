@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
@@ -25,32 +24,32 @@ module.exports = () => {
         title: 'JATE Text Editor'
       }),
       new InjectManifest({
-        swSrc: './src/src-sw.js',
-        swDest: 'service-worker.js',
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
         name: 'JATE Text Editor',
         short_name: 'JATE',
         description: 'My awesome Progressive Web App!',
         fingerprints: false,
-        background_color: '#fffff',
+        background_color: '#225ca3',
         crossorigin: 'use-credentials',
         icons: [
           {
             src: path.resolve("./src/images/logo.png"),
-            sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            destination: path.join("assets", "icons"),
           },
         ],
         start_url: './',
         publicPath: './'
       }),
-      new MiniCssExtractPlugin(),
     ],
     module: {
       rules: [
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          use: ["style-loader", 'css-loader'],
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
